@@ -1,0 +1,12 @@
+{"task_group":"cpp_implementation","prompt":"Implement a C++20 function that parses a comma-separated list of integers into std::vector<int>, returns std::expected on errors, and avoids unnecessary copies."}
+{"task_group":"cpp_implementation","prompt":"Implement an RAII C++20 class that owns a POSIX file descriptor, supports move semantics, and closes the descriptor exactly once."}
+{"task_group":"cpp_unit_test","prompt":"Write GoogleTest unit tests for a C++ LRU cache. Cover eviction order, updating an existing key, zero capacity, and repeated reads."}
+{"task_group":"cpp_unit_test","prompt":"Write GoogleTest tests for a C++ parser that returns std::expected<Value, Error>. Include malformed input and boundary cases."}
+{"task_group":"python","prompt":"Write a Python function using pathlib that recursively finds JSON files and returns the ten largest files by byte size."}
+{"task_group":"python","prompt":"Refactor a Python retry loop into a decorator with exponential backoff and type annotations."}
+{"task_group":"sql","prompt":"Write PostgreSQL to return the top three products by revenue per category for the previous calendar month."}
+{"task_group":"sql","prompt":"Design a SQL query that finds users with three consecutive failed logins followed by a successful login within one hour."}
+{"task_group":"cmake","prompt":"Write modern CMake for a C++20 static library and GoogleTest executable using target_link_libraries and CTest."}
+{"task_group":"cmake","prompt":"Refactor a CMake project so warnings are target-local and an optional sanitizer flag applies only to project targets."}
+{"task_group":"reasoning","prompt":"A service has p99 latency spikes every ten minutes while CPU remains low. List hypotheses and design an experiment to distinguish them."}
+{"task_group":"reasoning","prompt":"Explain how you would decide whether to cache an expensive computation when its inputs have a heavy-tailed popularity distribution."}
