@@ -7,8 +7,10 @@ The roadmap is organized around evidence, not feature count.
 - [x] Define project scope and core hypothesis.
 - [x] Define memory tiers and page kinds.
 - [x] Add a framework-independent working-set manager.
-- [ ] Add telemetry event schema.
-- [ ] Add CI for unit tests and formatting.
+- [x] Add telemetry event schema.
+- [x] Add deterministic placement-policy simulation.
+- [x] Add CI for unit tests.
+- [ ] Add lint/format checks.
 
 **Exit criterion:** placement logic is deterministic, tested, and independent of a specific ML runtime.
 
@@ -46,7 +48,7 @@ The roadmap is organized around evidence, not feature count.
 - [ ] Integrate an MoE model backend.
 - [ ] Capture per-layer expert activation traces.
 - [ ] Analyze task-conditioned usage stability.
-- [ ] Implement LRU/frequency cache simulation before real transfers.
+- [x] Implement LRU/frequency cache simulation before real transfers.
 
 **Exit criterion:** show a cache simulation with meaningful hit-rate/VRAM trade-offs before building paging infrastructure.
 
