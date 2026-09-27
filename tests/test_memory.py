@@ -61,3 +61,12 @@ def test_pages_are_ordered_by_priority_then_recency() -> None:
         "newer",
         "cold",
     ]
+
+
+def test_touch_tracks_access_count() -> None:
+    runtime = manager()
+    runtime.register(Page("expert.1", PageKind.EXPERT, 10), MemoryTier.GPU)
+    runtime.touch("expert.1")
+    runtime.touch("expert.1")
+
+    assert runtime.state("expert.1").access_count == 2

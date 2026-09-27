@@ -43,3 +43,13 @@ class Page:
             raise ValueError("page_id must not be empty")
         if self.size_bytes <= 0:
             raise ValueError("size_bytes must be positive")
+
+
+@dataclass(frozen=True, slots=True)
+class PageState:
+    """Observable runtime state for a logical page."""
+
+    page: Page
+    tier: MemoryTier
+    last_access: int
+    access_count: int
