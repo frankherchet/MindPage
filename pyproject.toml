@@ -17,6 +17,14 @@ dependencies = []
 dev = [
   "pytest>=8.0",
 ]
+moe = [
+  "torch>=2.2",
+  "transformers>=5.12",
+  "accelerate>=1.0",
+]
+
+[project.scripts]
+mindpage-moe-trace = "mindpage.experiments.moe_trace:main"
 
 [tool.setuptools.packages.find]
 include = ["mindpage*"]
