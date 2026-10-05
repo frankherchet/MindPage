@@ -110,3 +110,9 @@ Secondary outcomes: number of agent iterations, generated tokens, wall-clock lat
 - Quantization may change both routing behavior and quality.
 
 These should be tracked explicitly in experiment reports.
+
+## Related work
+
+### Context/KV and adapter training
+
+- **Long-Context Fine-Tuning with Limited VRAM** (Fedosov et al., 2026, [arXiv:2607.15105](https://arxiv.org/abs/2607.15105)). Combines Hierarchical Global Attention (HGA) with segment-wise backpropagation and tiered KV storage: only the active segment stays differentiable in VRAM, older KV is detached to RAM or NVMe and selectively reloaded. On Qwen3-8B with 4-bit QLoRA on a 16 GB GPU, training reaches 16,384 tokens (dense: 2,048) at comparable perplexity and throughput; evaluation reaches 131,072 tokens. Reference design for Experiment 6 (same GPU/RAM/storage tiering for KV) and a candidate for long-context training in Experiment 2. Does not address MoE experts, routing, or prefetching. *Assessed from the abstract only.*
