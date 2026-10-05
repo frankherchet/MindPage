@@ -50,6 +50,7 @@ mindpage/
   runtime/       # working-set abstractions and placement policy
   adapters/      # adapter loading/routing (planned)
   repo/          # repository indexing/retrieval (planned)
+  benchmark/     # historical-task mining from git history
   telemetry/     # memory, transfer, and routing metrics (planned)
 
 docs/
@@ -57,7 +58,7 @@ docs/
   research.md
   roadmap.md
 
-experiments/     # reproducible experimental configurations (planned)
+experiments/     # reproducible experiment scripts, see experiments/README.md
 benchmarks/      # evaluation harnesses and datasets (planned)
 tests/
 ```
