@@ -45,12 +45,14 @@ The roadmap is organized around evidence, not feature count.
 
 ## Phase 4 — MoE expert profiling
 
-- [ ] Integrate an MoE model backend.
-- [ ] Capture per-layer expert activation traces.
-- [ ] Analyze task-conditioned usage stability.
+- [x] Add a framework-independent router trace schema and task-group analysis.
+- [x] Add a Hugging Face Transformers MoE tracing backend.
+- [ ] Run the first real MoE model trace and archive the environment/configuration.
+- [ ] Capture per-layer expert activation traces for the benchmark task groups.
+- [ ] Analyze task-conditioned usage stability and between-group separation.
 - [x] Implement LRU/frequency cache simulation before real transfers.
 
-**Exit criterion:** show a cache simulation with meaningful hit-rate/VRAM trade-offs before building paging infrastructure.
+**Exit criterion:** show a cache simulation driven by real router traces with meaningful hit-rate/VRAM trade-offs before building paging infrastructure.
 
 ## Phase 5 — expert paging
 
