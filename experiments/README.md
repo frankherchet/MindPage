@@ -101,6 +101,34 @@ Toolchain: GCC 15.2, CMake from Ubuntu 26.04, Make generator. `FMT_PEDANTIC=ON` 
 - The `build_error` task (`44f2c7a`, "Make base.h a compatibility header") also changes the top-level `CMakeLists.txt`, which the miner neither counts as source nor as test file. The task cannot be reproduced from its file lists, so it is correctly excluded.
 - Not covered: `module-test` needs C++ modules and the Ninja generator and is not built here; the 3 tasks touching it were judged on the remaining tests.
 
+**`train` tasks** (269 tasks from 2023–2025, used for training data rather than evaluation): validated in two passes. The first pass uses the same settings as above (3 hours). Older fmt revisions often do not compile under C++23 with GCC 15; for example the 2024 `ranges-test` fails on libstdc++'s newer `std::ranges` views. All 83 `build_error` tasks of the first pass were 2023–2024 commits and were validated again with C++17 (33 minutes):
+
+```bash
+python -m mindpage.benchmark.validate ~/src/fmt fmt-tasks.jsonl --split train \
+    --workers 4 --jobs 4 --work-dir /tmp/validate-work \
+    --cmake-arg=-DFMT_PEDANTIC=ON --cmake-arg=-DCMAKE_CXX_STANDARD=23 \
+    > fmt-train-validated.jsonl
+# fmt-train-build-error.jsonl: the build_error records of the first pass
+python -m mindpage.benchmark.validate ~/src/fmt fmt-train-build-error.jsonl \
+    --workers 4 --jobs 4 --work-dir /tmp/validate-work-cxx17 \
+    --cmake-arg=-DFMT_PEDANTIC=ON --cmake-arg=-DCMAKE_CXX_STANDARD=17 \
+    > fmt-train-cxx17.jsonl
+```
+
+Pass the standard explicitly also for C++17: fmt's nested cmake tests (`add-subdirectory-test`, `compile-error-test`, `find-package-test`, `static-export-test`) forward `-DCMAKE_CXX_STANDARD=${CMAKE_CXX_STANDARD}`, and CMake 4.2 rejects the empty value when it is unset. A first C++17 attempt without it reported 31 spurious `fails_after`.
+
+| status | C++23 pass | after C++17 retry of `build_error` |
+|---|---|---|
+| `valid` | 114 | 165 |
+| `no_fail_before` | 69 | 100 |
+| `fails_after` | 3 | 3 |
+| `build_error` | 83 | 1 |
+
+- 94 of the 165 valid train tasks flip only because the new tests do not compile without the source change (eval: 15 of 37).
+- The 3 `fails_after` tasks (`880e1494`, `bd9554a2`, `443a8ef3`) keep a failing `xchar-test` or `chrono-test` after the change. `443a8ef3` passes under C++17 and is `no_fail_before` there; the other two fail under both standards. Not investigated further.
+- The remaining `build_error` (`74a18728`, "Implemented fmt::day, fmt::month, fmt::year") does not compile `chrono-test` after the change under either standard.
+- The merged result (`fmt-train-final.jsonl`, not committed) adds `cxx_standard` (23 or 17) to each record.
+
 ## MoE expert traces in the cache simulator
 
 [`moe_expert_capture.py`](moe_expert_capture.py) (GPU) and [`moe_expert_report.py`](moe_expert_report.py) (CPU)

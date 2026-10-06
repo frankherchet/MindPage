@@ -5,12 +5,9 @@ created: 2026-10-05
 updated: 2026-10-06
 ---
 
-Both handout tasks (`docs/handout-ubuntu-4080s.md`) are done, each on its own branch with results in `experiments/README.md`:
+Both handout tasks (`docs/handout-ubuntu-4080s.md`) and the `train` validation are done; results are in `experiments/README.md`. Data that is not committed lives in `~/mindpage-data/`: mined and validated task JSONL (`fmt-train-final.jsonl` is the merged train result), MoE traces (`olmoe/`, `qwen3-coder/`) and their reports.
 
-- Task A, fail-to-pass validation: branch `claude/validate-fmt-tasks`. 37 of 64 fmt eval tasks are valid.
-- Task B, MoE expert traces: branch `claude/moe-expert-traces` (includes PR #1). 37 tasks traced on Qwen3-Coder-30B-A3B-FP8 and OLMoE; traces and reports are untracked in `traces/` of that worktree (`~/git/MindPage-moe-traces`).
-
-Still open: validate the 269 `train` tasks (same command with `--split train`, about 3 hours), and try `-fsanitize=address,undefined` on the 26 `no_fail_before` eval tasks.
+Still open: try `-fsanitize=address,undefined` on the `no_fail_before` tasks (26 eval, 100 train); several are real fixes (out-of-bounds read, out-of-range conversion) that a plain build does not expose.
 
 **Why:** Kolibri-1 does not fit on this machine; this is the groundwork for the Kolibri experiments.
-**How to apply:** Delete this memo once the train validation is done.
+**How to apply:** Delete this memo once the sanitizer run is done or dropped.
