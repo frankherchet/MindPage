@@ -19,12 +19,17 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import time
 from pathlib import Path
 
 import numpy as np
+
+# Offloaded layers are streamed into the GPU; avoid fragmentation OOMs.
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -124,7 +129,10 @@ def main() -> None:
     cli.add_argument("--limit", type=int)
     cli.add_argument("--max-prompt-tokens", type=int, default=3072)
     cli.add_argument("--max-new-tokens", type=int, default=256)
-    cli.add_argument("--max-gpu-memory", default="14GiB")
+    cli.add_argument(
+        "--max-gpu-memory", default="11GiB",
+        help="GPU budget for weights; the rest of 16 GB is needed for prefill activations",
+    )
     cli.add_argument("--max-cpu-memory", default="26GiB")
     args = cli.parse_args()
 

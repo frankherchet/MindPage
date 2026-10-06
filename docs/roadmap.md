@@ -47,8 +47,8 @@ The roadmap is organized around evidence, not feature count.
 
 - [x] Add a framework-independent router trace schema and task-group analysis.
 - [x] Add a Hugging Face Transformers MoE tracing backend.
-- [ ] Run the first real MoE model trace and archive the environment/configuration.
-- [ ] Capture per-layer expert activation traces for the benchmark task groups.
+- [x] Run the first real MoE model trace and archive the environment/configuration.
+- [x] Capture per-layer expert activation traces for the benchmark task groups.
 - [ ] Analyze task-conditioned usage stability and between-group separation.
 - [x] Implement LRU/frequency cache simulation before real transfers.
 

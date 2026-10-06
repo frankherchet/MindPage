@@ -45,9 +45,9 @@ def load(path: Path) -> tuple[ExpertTrace, dict]:
     return trace, meta
 
 
-def replay_task(path: Path) -> dict[tuple[str, float, str], tuple[int, int]]:
-    """Hits and misses of one task for every policy, GPU share and start state."""
-    trace, _ = load(path)
+def analyse_task(path: Path) -> dict:
+    """Replay one task for every policy, GPU share and start state."""
+    trace, meta = load(path)
     page_ids = trace.page_ids()
     total = len(page_ids)
     decode = list(trace.accesses("decode"))
@@ -60,7 +60,14 @@ def replay_task(path: Path) -> dict[tuple[str, float, str], tuple[int, int]]:
             counts[name, fraction, "warm"] = replay_equal_size(
                 decode, page_ids, slots, policy, warmup=prefill
             )[:2]
-    return counts
+    return {
+        "meta": meta,
+        "top_k": len(trace.experts[0][0]),
+        "decode_tokens": trace.decode_tokens,
+        "counts": counts,
+        "distances": reuse_distances(decode),
+        "distinct_fraction": len(set(decode)) / total,
+    }
 
 
 def percentile(sorted_values: list[int], q: float) -> int:
@@ -75,23 +82,22 @@ def main() -> None:
         "--check", action="store_true",
         help="cross-check one task per policy against WorkloadSimulator (slow)",
     )
+    cli.add_argument("--workers", type=int, default=4, help="tasks replayed in parallel")
     args = cli.parse_args()
 
     paths = sorted(args.traces.glob("*.npz"))
-    loaded = [(p, *load(p)) for p in paths]
-    loaded = [(p, t, m) for p, t, m in loaded if t.decode_tokens > 0]
-    if not loaded:
+    with ProcessPoolExecutor(max_workers=args.workers) as pool:
+        tasks = [t for t in pool.map(analyse_task, paths) if t["decode_tokens"] > 0]
+    if not tasks:
         raise SystemExit(f"no traces with decode tokens in {args.traces}")
-    traces = [(t, m) for _, t, m in loaded]
-    first, meta = traces[0]
-    total_experts = first.num_layers * first.num_experts
-    page_ids = first.page_ids()
-    expert_bytes = first.expert_bytes
-    accesses_per_token = first.num_layers * len(first.experts[0][0])
-    decode_tokens = sum(t.decode_tokens for t, _ in traces)
-
-    with ProcessPoolExecutor() as pool:
-        per_task = list(pool.map(replay_task, [p for p, _, _ in loaded]))
+    meta = tasks[0]["meta"]
+    num_layers, num_experts = meta["num_layers"], meta["num_experts"]
+    total_experts = num_layers * num_experts
+    expert_bytes = meta["expert_bytes"]
+    top_k = tasks[0]["top_k"]
+    accesses_per_token = num_layers * top_k
+    decode_tokens = sum(t["decode_tokens"] for t in tasks)
+    per_task = [t["counts"] for t in tasks]
 
     rows = []
     for policy_name in POLICIES:
@@ -110,15 +116,8 @@ def main() -> None:
             row["hit_rate_warm_task_max"] = max(warm)
             rows.append(row)
 
-    distances: list[int] = []
-    first_uses = 0
-    for trace, _ in traces:
-        for d in reuse_distances(trace.accesses("decode")):
-            if d is None:
-                first_uses += 1
-            else:
-                distances.append(d)
-    distances.sort()
+    distances = sorted(d for t in tasks for d in t["distances"] if d is not None)
+    first_uses = sum(d is None for t in tasks for d in t["distances"])
     reuse = {
         "accesses_per_token": accesses_per_token,
         "first_use_fraction": first_uses / (first_uses + len(distances)),
@@ -126,12 +125,11 @@ def main() -> None:
             f"p{int(q * 100)}": percentile(distances, q) for q in (0.1, 0.25, 0.5, 0.75, 0.9, 0.99)
         },
     }
-    unique = [
-        len(set(trace.accesses("decode"))) / total_experts for trace, _ in traces
-    ]
+    unique = [t["distinct_fraction"] for t in tasks]
 
     if args.check:
-        trace, _ = traces[0]
+        trace, _ = load(paths[0])
+        page_ids = trace.page_ids()
         decode = list(trace.accesses("decode"))
         for policy_name, policy in POLICIES.items():
             slots = round(0.2 * total_experts)
@@ -143,8 +141,8 @@ def main() -> None:
     full_miss = accesses_per_token * expert_bytes
     print(f"model: {meta['model_id']}")
     print(
-        f"tasks: {len(traces)}, decode tokens: {decode_tokens}, experts: "
-        f"{first.num_layers} x {first.num_experts}, top-{len(first.experts[0][0])}, "
+        f"tasks: {len(tasks)}, decode tokens: {decode_tokens}, experts: "
+        f"{num_layers} x {num_experts}, top-{top_k}, "
         f"{expert_bytes / 1e6:.1f} MB each"
     )
     print(
@@ -173,7 +171,7 @@ def main() -> None:
             json.dumps(
                 {
                     "model_id": meta["model_id"],
-                    "tasks": [m for _, m in traces],
+                    "tasks": [t["meta"] for t in tasks],
                     "rows": rows,
                     "reuse": reuse,
                     "distinct_experts_fraction": unique,
