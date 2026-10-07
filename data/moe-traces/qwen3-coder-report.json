@@ -1,0 +1,951 @@
+{
+  "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+  "tasks": [
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "029d543768abdc14a94360446597d0f5bc7350aa",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3073,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.0,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "0acf106c52f5c7f068ce6313f2ca310c7d5e8b63",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.8,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "0e601c34de26fe5b46f4c62dab2039efcb0acaed",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "128ba144ab85ddd0ad9ea39f2febdfb51802cb1b",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.6,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "1a99c2630cdf07f4e18924adc5e10650aaf67bc6",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "1ffdc7687f455c2a8c86c5e701e41f3dd41b5490",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.5,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "2012961e3ec62e0f6133e7ea95d55db7aca57ccc",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.4,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "21d4cc15c8a2a3536aab5623258ba3b3dae573ce",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.4,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "45ed657df3c80a20fb78cb3587320ee04fe63903",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.4,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "45f230b9b2dc78f2efd3b9a3baff518a2d717c60",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3096,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.7,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "4ccf1d4faf977a77f157fcad2b96b663109f59cb",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.0,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "588b3a0f8f6a8bcf2a959cae882d5b2703e86737",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.9,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "5cc5072aa68c48a8c67f4d09ef1b9fcb9ab15a26",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.2,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "61e3b92396b6a9dbab0313418a3f2c7310bd3a7b",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.3,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "6aa4a5f6f8c25eec5879b360b95c814dd5c37991",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3035,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "6b018edfb9f6221738b753245e5818bc651792af",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3035,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 1014.0,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "6c285ba88a22e287f8d33a4e15b43c0095160181",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.2,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "6dac6cad052d6593f5fa07529d912f3bd0d6bb11",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.9,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "7852fc384ce4232284fc685f66f70ed99b0c2cd4",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.9,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "8277ee6aa04e80604806f39c85016a58ed693912",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3058,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 670.8,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "854fc9567a2cbea01b0f413565705ccbaf5bde5c",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 1862,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.0,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "979c94dff814b3d5c15415c4426a54e66b388ae1",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3036,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.5,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "9cb8c0f92b4c345fb974a75d71370c23047528aa",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3035,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.7,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "9d13c41ce61329cc85c7c3c67c859ffe2b0e6178",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.3,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "a30cf7d1adf074628c4ae765999e3ef95895843d",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.2,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "a90ad5d6fde4b39417f63a034d566dd7f09b0a55",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3035,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.4,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "af2d9f2b78d68e2fa8f7d5f120da3127e954ec05",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3035,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.8,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "b35de87ad91951c8269fe533dca6aebc3e0a25ba",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 670.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "b4b1657c2aa45cf08dcd7a76e2302bef60314148",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.8,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "b98926b73ba35dd750be2a6c1db345e46d775172",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3062,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.6,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "cbb264122ad3d81490dc952c2affec6351230165",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3046,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.7,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "cde18a38bbd960a2e803b76880fbbf4b4ffb3cd7",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.3,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "cfb57bfa3aa90573abfc39a160bb0248e14fd64f",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.6,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "d0cec7ae2ec6d01714db314983aa6fb9d53184ab",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "e76a9520a3c339d2cb6a1510db43a05ea9bd8ae6",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.3,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "ea85b81ccdb28dda636351e80a1888b1d279f325",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3034,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 669.1,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    },
+    {
+      "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8",
+      "commit": "eeff8680ed900933c28df7c618ca3e11d6a766ec",
+      "num_layers": 48,
+      "num_experts": 128,
+      "top_k": 8,
+      "expert_bytes": 9437184,
+      "prefill_tokens": 3033,
+      "decode_tokens": 255,
+      "generated_tokens": 256,
+      "seconds": 668.0,
+      "experts_storage": "FP8Experts {'gate_up_proj': ('torch.float8_e4m3fn', (128, 1536, 2048)), 'gate_up_proj_scale_inv': ('torch.bfloat16', (128, 12, 16)), 'down_proj': ('torch.float8_e4m3fn', (128, 2048, 768)), 'down_proj_scale_inv': ('torch.bfloat16', (128, 16, 6))}",
+      "placement": [
+        "0",
+        "cpu"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "policy": "LRU",
+      "fraction": 0.05,
+      "slots": 307,
+      "hit_rate_cold": 0.0,
+      "bytes_per_token_cold": 3623878656.0,
+      "hit_rate_warm": 0.0,
+      "bytes_per_token_warm": 3623878656.0,
+      "hit_rate_warm_task_min": 0.0,
+      "hit_rate_warm_task_max": 0.0
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.1,
+      "slots": 614,
+      "hit_rate_cold": 0.47832676426426424,
+      "bytes_per_token_cold": 1890480504.3891892,
+      "hit_rate_warm": 0.48043107445680977,
+      "bytes_per_token_warm": 1882854739.5968204,
+      "hit_rate_warm_task_min": 0.3713031045751634,
+      "hit_rate_warm_task_max": 0.6082312091503268
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.15,
+      "slots": 922,
+      "hit_rate_cold": 0.6129924041688748,
+      "bytes_per_token_cold": 1402468566.2422893,
+      "hit_rate_warm": 0.6156111994347289,
+      "bytes_per_token_warm": 1392978369.9739268,
+      "hit_rate_warm_task_min": 0.5271139705882353,
+      "hit_rate_warm_task_max": 0.7234375
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.2,
+      "slots": 1229,
+      "hit_rate_cold": 0.7017940734852499,
+      "bytes_per_token_cold": 1080662092.1895072,
+      "hit_rate_warm": 0.7059129901960784,
+      "bytes_per_token_warm": 1065735637.8352941,
+      "hit_rate_warm_task_min": 0.6203839869281046,
+      "hit_rate_warm_task_max": 0.829421977124183
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.25,
+      "slots": 1536,
+      "hit_rate_cold": 0.7707392134781841,
+      "bytes_per_token_cold": 830813270.9341812,
+      "hit_rate_warm": 0.7764162140081258,
+      "bytes_per_token_warm": 810240509.8836248,
+      "hit_rate_warm_task_min": 0.6963031045751634,
+      "hit_rate_warm_task_max": 0.893188316993464
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.3,
+      "slots": 1843,
+      "hit_rate_cold": 0.8211336336336337,
+      "bytes_per_token_cold": 648190007.3513514,
+      "hit_rate_warm": 0.8305966812400636,
+      "bytes_per_token_warm": 613897071.1096979,
+      "hit_rate_warm_task_min": 0.7563827614379085,
+      "hit_rate_warm_task_max": 0.9311580882352941
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.4,
+      "slots": 2458,
+      "hit_rate_cold": 0.8916053921568627,
+      "bytes_per_token_cold": 392808905.7882353,
+      "hit_rate_warm": 0.9043270292351174,
+      "bytes_per_token_warm": 346707236.7109698,
+      "hit_rate_warm_task_min": 0.8423304738562092,
+      "hit_rate_warm_task_max": 0.9707516339869281
+    },
+    {
+      "policy": "LRU",
+      "fraction": 0.5,
+      "slots": 3072,
+      "hit_rate_cold": 0.9263803325384208,
+      "bytes_per_token_cold": 266788741.57583466,
+      "hit_rate_warm": 0.9441168190249073,
+      "bytes_per_token_warm": 202513866.76502386,
+      "hit_rate_warm_task_min": 0.8999591503267974,
+      "hit_rate_warm_task_max": 0.9827205882352941
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.05,
+      "slots": 307,
+      "hit_rate_cold": 0.2908154478007419,
+      "bytes_per_token_cold": 2569998761.8798094,
+      "hit_rate_warm": 0.12585011482070305,
+      "bytes_per_token_warm": 3167813111.046105,
+      "hit_rate_warm_task_min": 0.06133578431372549,
+      "hit_rate_warm_task_max": 0.19322916666666667
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.1,
+      "slots": 614,
+      "hit_rate_cold": 0.45637779323441086,
+      "bytes_per_token_cold": 1970020912.025437,
+      "hit_rate_warm": 0.20160472972972973,
+      "bytes_per_token_warm": 2893287578.9837837,
+      "hit_rate_warm_task_min": 0.11107026143790849,
+      "hit_rate_warm_task_max": 0.2944750816993464
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.15,
+      "slots": 922,
+      "hit_rate_cold": 0.5736621732026144,
+      "bytes_per_token_cold": 1544996550.7764707,
+      "hit_rate_warm": 0.27500910837307896,
+      "bytes_per_token_warm": 2627279017.9612083,
+      "hit_rate_warm_task_min": 0.15847630718954248,
+      "hit_rate_warm_task_max": 0.37142565359477125
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.2,
+      "slots": 1229,
+      "hit_rate_cold": 0.6617682940293235,
+      "bytes_per_token_cold": 1225710660.0496025,
+      "hit_rate_warm": 0.346903705175764,
+      "bytes_per_token_warm": 2366741723.126232,
+      "hit_rate_warm_task_min": 0.2148999183006536,
+      "hit_rate_warm_task_max": 0.4467013888888889
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.25,
+      "slots": 1536,
+      "hit_rate_cold": 0.729920453541777,
+      "bytes_per_token_cold": 978735503.8321145,
+      "hit_rate_warm": 0.4177864445327681,
+      "bytes_per_token_warm": 2109871276.891574,
+      "hit_rate_warm_task_min": 0.2810253267973856,
+      "hit_rate_warm_task_max": 0.5127553104575163
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.3,
+      "slots": 1843,
+      "hit_rate_cold": 0.7836667549902844,
+      "bytes_per_token_cold": 783965429.1739268,
+      "hit_rate_warm": 0.4881963765235824,
+      "bytes_per_token_warm": 1854714227.1796503,
+      "hit_rate_warm_task_min": 0.35372753267973855,
+      "hit_rate_warm_task_max": 0.5887561274509804
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.4,
+      "slots": 2458,
+      "hit_rate_cold": 0.8620070438085145,
+      "bytes_per_token_cold": 500069728.62066776,
+      "hit_rate_warm": 0.6261575914149443,
+      "bytes_per_token_warm": 1354759525.1790142,
+      "hit_rate_warm_task_min": 0.5105187908496732,
+      "hit_rate_warm_task_max": 0.7390522875816994
+    },
+    {
+      "policy": "Frequency",
+      "fraction": 0.5,
+      "slots": 3072,
+      "hit_rate_cold": 0.910375816993464,
+      "bytes_per_token_cold": 324787163.85882354,
+      "hit_rate_warm": 0.7555340266737326,
+      "bytes_per_token_warm": 885915022.8553259,
+      "hit_rate_warm_task_min": 0.6548100490196078,
+      "hit_rate_warm_task_max": 0.8543096405228758
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.05,
+      "slots": 307,
+      "hit_rate_cold": 0.2908154478007419,
+      "bytes_per_token_cold": 2569998761.8798094,
+      "hit_rate_warm": 0.12585011482070305,
+      "bytes_per_token_warm": 3167813111.046105,
+      "hit_rate_warm_task_min": 0.06133578431372549,
+      "hit_rate_warm_task_max": 0.19322916666666667
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.1,
+      "slots": 614,
+      "hit_rate_cold": 0.45637779323441086,
+      "bytes_per_token_cold": 1970020912.025437,
+      "hit_rate_warm": 0.20160472972972973,
+      "bytes_per_token_warm": 2893287578.9837837,
+      "hit_rate_warm_task_min": 0.11107026143790849,
+      "hit_rate_warm_task_max": 0.2944750816993464
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.15,
+      "slots": 922,
+      "hit_rate_cold": 0.5736621732026144,
+      "bytes_per_token_cold": 1544996550.7764707,
+      "hit_rate_warm": 0.27500910837307896,
+      "bytes_per_token_warm": 2627279017.9612083,
+      "hit_rate_warm_task_min": 0.15847630718954248,
+      "hit_rate_warm_task_max": 0.37142565359477125
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.2,
+      "slots": 1229,
+      "hit_rate_cold": 0.6617682940293235,
+      "bytes_per_token_cold": 1225710660.0496025,
+      "hit_rate_warm": 0.346903705175764,
+      "bytes_per_token_warm": 2366741723.126232,
+      "hit_rate_warm_task_min": 0.2148999183006536,
+      "hit_rate_warm_task_max": 0.4467013888888889
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.25,
+      "slots": 1536,
+      "hit_rate_cold": 0.729920453541777,
+      "bytes_per_token_cold": 978735503.8321145,
+      "hit_rate_warm": 0.4177864445327681,
+      "bytes_per_token_warm": 2109871276.891574,
+      "hit_rate_warm_task_min": 0.2810253267973856,
+      "hit_rate_warm_task_max": 0.5127553104575163
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.3,
+      "slots": 1843,
+      "hit_rate_cold": 0.7836667549902844,
+      "bytes_per_token_cold": 783965429.1739268,
+      "hit_rate_warm": 0.4881963765235824,
+      "bytes_per_token_warm": 1854714227.1796503,
+      "hit_rate_warm_task_min": 0.35372753267973855,
+      "hit_rate_warm_task_max": 0.5887561274509804
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.4,
+      "slots": 2458,
+      "hit_rate_cold": 0.8620070438085145,
+      "bytes_per_token_cold": 500069728.62066776,
+      "hit_rate_warm": 0.6261575914149443,
+      "bytes_per_token_warm": 1354759525.1790142,
+      "hit_rate_warm_task_min": 0.5105187908496732,
+      "hit_rate_warm_task_max": 0.7390522875816994
+    },
+    {
+      "policy": "PriorityCost",
+      "fraction": 0.5,
+      "slots": 3072,
+      "hit_rate_cold": 0.910375816993464,
+      "bytes_per_token_cold": 324787163.85882354,
+      "hit_rate_warm": 0.7555340266737326,
+      "bytes_per_token_warm": 885915022.8553259,
+      "hit_rate_warm_task_min": 0.6548100490196078,
+      "hit_rate_warm_task_max": 0.8543096405228758
+    }
+  ],
+  "reuse": {
+    "accesses_per_token": 384,
+    "first_use_fraction": 0.04775878819996467,
+    "percentiles_accesses": {
+      "p10": 382,
+      "p25": 383,
+      "p50": 767,
+      "p75": 2686,
+      "p90": 6529,
+      "p99": 29185
+    }
+  },
+  "distinct_experts_fraction": [
+    0.83251953125,
+    0.8251953125,
+    0.7685546875,
+    0.7744140625,
+    0.8347981770833334,
+    0.7887369791666666,
+    0.78564453125,
+    0.5862630208333334,
+    0.55712890625,
+    0.7958984375,
+    0.76171875,
+    0.7804361979166666,
+    0.7307942708333334,
+    0.8343098958333334,
+    0.693359375,
+    0.8274739583333334,
+    0.8318684895833334,
+    0.7936197916666666,
+    0.7747395833333334,
+    0.7698567708333334,
+    0.7130533854166666,
+    0.7727864583333334,
+    0.5667317708333334,
+    0.8048502604166666,
+    0.7252604166666666,
+    0.8546549479166666,
+    0.7174479166666666,
+    0.8125,
+    0.802734375,
+    0.7786458333333334,
+    0.5361328125,
+    0.8092447916666666,
+    0.8528645833333334,
+    0.8180338541666666,
+    0.7713216145833334,
+    0.69189453125,
+    0.7872721354166666
+  ]
+}

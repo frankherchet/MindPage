@@ -2,6 +2,8 @@
 
 Reproducible experiment scripts. Each script is self-contained and documents its own requirements; none of them run in CI.
 
+Their outputs are committed under [`data/`](../data/): mined and validated fmt tasks in `data/fmt/`, MoE expert traces and reports in `data/moe-traces/`. File names match the commands below.
+
 ## Kolibri-1 LoRA smoke test
 
 [`kolibri1_lora_smoke.py`](kolibri1_lora_smoke.py)
@@ -127,7 +129,7 @@ Pass the standard explicitly also for C++17: fmt's nested cmake tests (`add-subd
 - 94 of the 165 valid train tasks flip only because the new tests do not compile without the source change (eval: 15 of 37).
 - The 3 `fails_after` tasks (`880e1494`, `bd9554a2`, `443a8ef3`) keep a failing `xchar-test` or `chrono-test` after the change. `443a8ef3` passes under C++17 and is `no_fail_before` there; the other two fail under both standards. Not investigated further.
 - The remaining `build_error` (`74a18728`, "Implemented fmt::day, fmt::month, fmt::year") does not compile `chrono-test` after the change under either standard.
-- The merged result (`fmt-train-final.jsonl`, not committed) adds `cxx_standard` (23 or 17) to each record.
+- The merged result ([`data/fmt/fmt-train-final.jsonl`](../data/fmt/fmt-train-final.jsonl)) adds `cxx_standard` (23 or 17) to each record.
 
 **Sanitizer pass:** all 126 `no_fail_before` tasks (26 `eval`, 100 `train`) were validated again with ASan and UBSan, each with its earlier C++ standard (eval and 69 train tasks C++23, 31 train tasks C++17; 2.7 hours with 4 workers × 4 jobs):
 
@@ -158,7 +160,7 @@ UBSan's `null` check is disabled because fmt's own test harness triggers it in e
 
 - No task regresses (`pass_to_fail` is empty everywhere), so the sanitizers add no noise beyond the disabled `null` check.
 - The two fixes named above stay `no_fail_before`: the tests of `8a7aea04` (out-of-bounds read in error code format parsing) and `de4c6c50` (float-to-int conversion in `to_nonnegative_int`) do not trigger the bug in a way ASan or UBSan detect.
-- The yield is small: 4 of 126 tasks. The validated sets grow to 38 `eval` and 168 `train` tasks. The results (`fmt-nfb-sanitized.jsonl`, not committed) carry `cxx_standard` and `sanitizer`; a task's sanitizer flags are needed to reproduce its fail-to-pass.
+- The yield is small: 4 of 126 tasks. The validated sets grow to 38 `eval` and 168 `train` tasks. The results ([`data/fmt/fmt-nfb-sanitized.jsonl`](../data/fmt/fmt-nfb-sanitized.jsonl)) carry `cxx_standard` and `sanitizer`; a task's sanitizer flags are needed to reproduce its fail-to-pass.
 
 ## MoE expert traces in the cache simulator
 
@@ -196,7 +198,7 @@ python experiments/moe_expert_capture.py --model Qwen/Qwen3-Coder-30B-A3B-Instru
 python experiments/moe_expert_report.py traces/qwen3-coder --json qwen3-coder-report.json --check
 ```
 
-The `.npz` traces are not committed (~1 MB per task); they are reproducible with the commands above.
+The `.npz` traces (~1 MB per task) and both reports are in [`data/moe-traces/`](../data/moe-traces/).
 
 **Environment:** RTX 4080 Super (16 GB), 32 GB RAM, torch 2.14.1 + CUDA 13.0, transformers 5.18.0, accelerate, kernels 0.17.0, NVIDIA driver 580.178. Qwen3-Coder with `--max-gpu-memory 11GiB`: higher budgets run out of GPU memory in the FP8 expert kernel during the 3k-token prefill.
 
