@@ -97,7 +97,7 @@ Toolchain: GCC 15.2, CMake from Ubuntu 26.04, Make generator. `FMT_PEDANTIC=ON` 
 
 - 15 of the 37 valid tasks flip only because the new tests do not compile without the source change (new API); the other 22 have a test that compiles and fails at runtime. Most tasks flip a single test; `format-test` (10) and `std-test` (6) flip most often.
 - No valid task has a test that still fails afterwards, so there is no environment-specific noise in this setup.
-- About half of the 26 `no_fail_before` tasks are refactorings and cleanups ("Simplify copy", "Move std::byte formatter to std.h"). The rest include real fixes whose bug a plain build does not expose, such as an out-of-bounds read (`8a7aea04`) and an out-of-range float-to-int conversion (`de4c6c50`); these may flip under `-fsanitize=address,undefined`, which is not tried yet. Two tasks need C++26 reflection (`e27cc20b`, `e589a16e`), which GCC 15 does not provide.
+- About half of the 26 `no_fail_before` tasks are refactorings and cleanups ("Simplify copy", "Move std::byte formatter to std.h"). The rest include real fixes whose bug a plain build does not expose, such as an out-of-bounds read (`8a7aea04`) and an out-of-range float-to-int conversion (`de4c6c50`); neither flips under `-fsanitize=address,undefined` (see below). Two tasks need C++26 reflection (`e27cc20b`, `e589a16e`), which GCC 15 does not provide.
 - The `build_error` task (`44f2c7a`, "Make base.h a compatibility header") also changes the top-level `CMakeLists.txt`, which the miner neither counts as source nor as test file. The task cannot be reproduced from its file lists, so it is correctly excluded.
 - Not covered: `module-test` needs C++ modules and the Ninja generator and is not built here; the 3 tasks touching it were judged on the remaining tests.
 
@@ -128,6 +128,37 @@ Pass the standard explicitly also for C++17: fmt's nested cmake tests (`add-subd
 - The 3 `fails_after` tasks (`880e1494`, `bd9554a2`, `443a8ef3`) keep a failing `xchar-test` or `chrono-test` after the change. `443a8ef3` passes under C++17 and is `no_fail_before` there; the other two fail under both standards. Not investigated further.
 - The remaining `build_error` (`74a18728`, "Implemented fmt::day, fmt::month, fmt::year") does not compile `chrono-test` after the change under either standard.
 - The merged result (`fmt-train-final.jsonl`, not committed) adds `cxx_standard` (23 or 17) to each record.
+
+**Sanitizer pass:** all 126 `no_fail_before` tasks (26 `eval`, 100 `train`) were validated again with ASan and UBSan, each with its earlier C++ standard (eval and 69 train tasks C++23, 31 train tasks C++17; 2.7 hours with 4 workers × 4 jobs):
+
+```bash
+SAN="-fsanitize=address,undefined -fno-sanitize=null -fno-sanitize-recover=all -fno-omit-frame-pointer"
+python -m mindpage.benchmark.validate ~/src/fmt eval-no-fail-before.jsonl \
+    --workers 4 --jobs 4 --work-dir /tmp/validate-san \
+    --cmake-arg=-DFMT_PEDANTIC=ON --cmake-arg=-DCMAKE_CXX_STANDARD=23 \
+    "--cmake-arg=-DCMAKE_CXX_FLAGS=$SAN" \
+    --cmake-arg=-DCMAKE_EXE_LINKER_FLAGS=-fsanitize=address,undefined \
+    --cmake-arg=-DCMAKE_SHARED_LINKER_FLAGS=-fsanitize=address,undefined \
+    > eval-sanitized.jsonl
+```
+
+UBSan's `null` check is disabled because fmt's own test harness triggers it in every revision: `test/mock-allocator.h` binds a reference to a null allocator in `memory_buffer_test.move_ctor_dynamic_buffer_non_propagating`, which makes `format-test` fail before and after every change and hides all other findings. A real null dereference still crashes the test.
+
+| split | tasks | now `valid` |
+|---|---|---|
+| `eval` | 26 | 1 |
+| `train` | 100 | 3 |
+
+| commit | split | flipped test | commit title |
+|---|---|---|---|
+| `dc05bee3` | eval | `printf-test` | Don't assume nul termination in printf |
+| `fc0c76a0` | train (C++23) | `format-test` | Handle large precision |
+| `35dcc582` | train (C++23) | `color-test` | fix buffer overflow on all emphasis flags set (#4498) |
+| `401f0873` | train (C++17) | `format-test` | Fix write_uintptr_fallback |
+
+- No task regresses (`pass_to_fail` is empty everywhere), so the sanitizers add no noise beyond the disabled `null` check.
+- The two fixes named above stay `no_fail_before`: the tests of `8a7aea04` (out-of-bounds read in error code format parsing) and `de4c6c50` (float-to-int conversion in `to_nonnegative_int`) do not trigger the bug in a way ASan or UBSan detect.
+- The yield is small: 4 of 126 tasks. The validated sets grow to 38 `eval` and 168 `train` tasks. The results (`fmt-nfb-sanitized.jsonl`, not committed) carry `cxx_standard` and `sanitizer`; a task's sanitizer flags are needed to reproduce its fail-to-pass.
 
 ## MoE expert traces in the cache simulator
 
